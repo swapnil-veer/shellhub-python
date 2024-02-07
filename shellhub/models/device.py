@@ -64,7 +64,7 @@ class ShellHubDevice:
         self.online = device_json["online"]
         self.namespace = device_json["namespace"]
         self.status = device_json["status"]
-        self.status_updated_at = datetime.now()     # We always want to track datetime when it is updated
+        self.status_updated_at =  datetime.fromisoformat(device_json["status_updated_at"])
         self.created_at = datetime.fromisoformat(device_json["created_at"])
         self.remote_addr = device_json["remote_addr"]
         self.tags = device_json["tags"]
